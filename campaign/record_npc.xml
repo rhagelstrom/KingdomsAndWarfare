@@ -7,47 +7,30 @@
 
 <root>
 	<windowclass name="npc" merge="join">
-		<script>
-			local fStateChanged;
-			function onInit()
-				fStateChanged = super.StateChanged;
-				super.StateChanged = StateChanged
-
-				super.onInit()
-			end
-
-			function StateChanged()
-				fStateChanged();
-				if warfare.subwindow then
-					warfare.subwindow.update();
-				end
-			end
-		</script>
-		<sheetdata>
-			<subwindow_record name="warfare" insertbefore="text">
-				<class>npc_warfare</class>
-				<invisible />
-			</subwindow_record>
-			<scrollbar_record>
-				<target>warfare</target>
-			</scrollbar_record>
-
-			<tabs_recordsheet name="tabs" merge="delete" />
-			<tabs_recordsheet name="tabs">
-				<tab>
-					<icon>tab_main</icon>
-					<subwindow>main_creature</subwindow>
-				</tab>
-				<tab>
-					<icon>tab_powers</icon>
-					<subwindow>warfare</subwindow>
-				</tab>
-				<tab>
-					<icon>tab_other</icon>
-					<subwindow>text</subwindow>
-				</tab>
-			</tabs_recordsheet>
-		</sheetdata>
+		<tab>
+			<name>main</name>
+			<resource>tab_main</resource>
+			<class>npc_combat</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>warfare</name>
+			<resource>tab_powers</resource>
+			<class>npc_warfare</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>notes</name>
+			<resource>tab_notes</resource>
+			<class>record_content_text</class>
+			<embed />
+		</tab>
+		<tab merge="add">
+			<name>pictures</name>
+			<resource>tab_pictures</resource>
+			<class>record_content_pictures</class>
+			<embed />
+		</tab>
 	</windowclass>
 
 	<windowclass name="npc_warfare">

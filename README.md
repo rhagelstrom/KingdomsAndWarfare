@@ -4,7 +4,9 @@ Adds Fantasy Grounds support for MCDM's Kingdoms and Warfare D&amp;D 5th edition
 
 [Download the latest version of the extension at this link](https://github.com/MCDMFG/KingdomsAndWarfare/releases/latest/download/KingdomsAndWarfare.ext)
 
-For any suggestions, comments, or issues feel free to create an issue here, or reach out to saagael or meandunique on Discord.
+For any suggestions, comments, or issues feel free to create an issue here, or reach out to me on Discord. My username is: Saagael#5728
+
+Huge thanks to MeAndUnique for his help designing, developing, and debugging.
 
 ## Wiki
 
@@ -42,4 +44,4 @@ See in-depth documentation for all features included with this extension on the 
 
 To install and load the extension, you need to download the .ext file from the link above, put that file in Fantasy Ground's extension folder, and then activate the extension when loading your campaign. The below image shows to how to find the extension folder, and where to activate the extension at.
 
-![Load extension](.resources/LoadExtension.webp)
+![Load extension](https://i.imgur.com/7XaJgvX.png)

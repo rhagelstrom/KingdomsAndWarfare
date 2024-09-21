@@ -29,8 +29,9 @@ function addInfoDB(nodeChar, sClass, sRecord)
 end
 
 function addTitleDB(nodeChar, sClass, sRecord)
-	local nodeSource = CharManagerKw.resolveRefNode(sRecord);
+	local nodeSource = DB.findNode(sRecord);
 	if not nodeSource then
+		ChatManager.SystemMessage(Interface.getString("char_error_missingrecord"));
 		return;
 	end
 
@@ -55,13 +56,14 @@ function addTitleDB(nodeChar, sClass, sRecord)
 	DB.setValue(vNew, "locked", "number", 1);
 	
 	-- Announce
-	CharManager.outputUserMessage("char_abilities_message_titleadd", DB.getValue(vNew, "name", ""), DB.getValue(nodeChar, "name", ""));
+	ChatManager.SystemMessageResource("char_abilities_message_titleadd", DB.getValue(vNew, "name", ""), DB.getValue(nodeChar, "name", ""));
 	return true;
 end
 
 function addMartialAdvantageDB(nodeChar, sClass, sRecord, bSkipAction)
-	local nodeSource = CharManagerKw.resolveRefNode(sRecord);
+	local nodeSource = DB.findNode(sRecord);
 	if not nodeSource then
+		ChatManager.SystemMessage(Interface.getString("char_error_missingrecord"));
 		return;
 	end
 
@@ -90,23 +92,6 @@ function addMartialAdvantageDB(nodeChar, sClass, sRecord, bSkipAction)
 	end
 	
 	-- Announce
-	CharManager.outputUserMessage("char_abilities_message_maadd", DB.getValue(vNew, "name", ""), DB.getValue(nodeChar, "name", ""));
+	ChatManager.SystemMessageResource("char_abilities_message_maadd", DB.getValue(vNew, "name", ""), DB.getValue(nodeChar, "name", ""));
 	return true;
-end
-
-function resolveRefNode(sRecord)
-	if (sRecord or "") == "" then
-		return nil;
-	end
-
-	local nodeSource = DB.findNode(sRecord);
-
-	if not nodeSource then
-		local sRecordSansModule = StringManager.split(sRecord, "@")[1];
-		nodeSource = DB.findNode(sRecordSansModule .. "@*");
-		if not nodeSource then
-			ChatManager.SystemMessage(Interface.getString("char_error_missingrecord").." ["..sRecord.."]");
-		end
-	end
-	return nodeSource;
 end

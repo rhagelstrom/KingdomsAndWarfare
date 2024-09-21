@@ -470,7 +470,7 @@ function notifyRankCollapsed(rank)
 		sFaction = "enemy"
 	end
 
-	CharManager.outputUserMessage("message_rank_collapsed", StringManager.capitalize(rank.rank), sFaction);
+	ChatManager.SystemMessageResource("message_rank_collapsed", StringManager.capitalize(rank.rank), sFaction);
 end
 
 --

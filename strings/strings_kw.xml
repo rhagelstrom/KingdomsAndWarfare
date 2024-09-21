@@ -18,14 +18,10 @@
 	<string name="library_recordtype_empty_nonid_unit">&#171; Unidentified Unit &#187;</string>
 	<string name="library_recordtype_label_domain">Domains</string>
 	<string name="library_recordtype_empty_domain">&#171; New Domain &#187;</string>
-	<string name="ref_type_domain">Domain</string>
-	<string name="ref_type_title">Title</string>
 	<string name="library_recordtype_label_advantage">Advantages</string>
 	<string name="library_recordtype_empty_advantage">&#171; New Martial Advantage &#187;</string>
-	<string name="ref_type_martialadvantage">Martial Advantage</string>
 	<string name="library_recordtype_label_trait">Unit Traits</string>
 	<string name="library_recordtype_empty_trait">&#171; New Unit Trait &#187;</string>
-	<string name="ref_type_unittrait">Unit Trait</string>
 
 	<!-- Experience levels -->
 	<string name="exp_levies">Levies</string>

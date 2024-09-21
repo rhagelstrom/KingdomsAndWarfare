@@ -4,8 +4,7 @@
 --
 
 function onInit()
-	onSummaryChanged();
-	update();
+	self.onSummaryChanged();
 end
 
 function onDrop(x, y, draginfo)
@@ -35,7 +34,7 @@ function onDrop(x, y, draginfo)
 
 			CombatManagerKw.parseUnitTrait(vNew)
 
-			CharManager.outputUserMessage("unit_traits_message_traitadd", sName, DB.getValue(unit, "name", ""));
+			ChatManager.SystemMessageResource("unit_traits_message_traitadd", sName, DB.getValue(unit, "name", ""));
 
 			update();
 
@@ -93,11 +92,6 @@ function update()
 	local bID = LibraryData.getIDState("unit", nodeRecord);
 
 	local bSection1 = false;
-	if Session.IsHost then
-		if WindowManager.callSafeControlUpdate(self, "nonid_name", bReadOnly) then bSection1 = true; end;
-	else
-		WindowManager.callSafeControlUpdate(self, "nonid_name", bReadOnly, true);
-	end
 	if WindowManager.callSafeControlUpdate(self, "commander", bReadOnly) then bSection1 = true; end;
 	if WindowManager.callSafeControlUpdate(self, "commander_readonly", bReadOnly) then bSection1 = true; end;
 	

@@ -21,11 +21,10 @@
 				<resource>library_recordtype_label_warfare_tokens</resource>
 			</windowtitlebar_utilitybox>
 			<windowmenubar_utilitybox name="menubar" />
-			<resize_utilitybox />
 
 			<anchor_content_utilitybox_top />
-
 			<anchor_content_utilitybox_bottom />
+
 			<area_list_content_controls />
 			<anchor_list_content_controls_right />
 			<button_iedit_list_content_controls />
@@ -43,6 +42,8 @@
 			<sub_content_framed_groupbox_right name="fortifications">
 				<class>warfare_fortifications</class>
 			</sub_content_framed_groupbox_right>
+
+			<resize_utilitybox />
 		</sheetdata>
 	</windowclass>
 
@@ -192,7 +193,7 @@
 					for _,tokenWindow in pairs(fortification.tokens.getWindows()) do
 						if tokenWindow.token then
 							if tokenWindow.token.getPrototype() == sToken then
-								CharManager.outputUserMessage("message_fortification_token_alreadyused", sToken, name.getValue(), fortification.name.getValue());
+								ChatManager.SystemMessageResource("message_fortification_token_alreadyused", sToken, name.getValue(), fortification.name.getValue());
 								return true;
 							end
 						end
@@ -262,7 +263,6 @@
 				<datasource>.tokens</datasource>
 				<class>fortification_token</class>
 				<columns width="42" fillwidth="true" />
-				<skipempty />
 				<noscroll />
 			</windowlist>
 		</sheetdata>

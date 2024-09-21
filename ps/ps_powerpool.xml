@@ -22,7 +22,6 @@
 				<acceptdrop>
 					<type>number</type>
 				</acceptdrop>
-				<skipempty />
 				<columns>
 					<width>35</width>
 					<fillwidth />
@@ -210,7 +209,7 @@
 				end
 			end
 			function update(bEditMode)
-				idelete.setVisibility(bEditMode);
+				idelete.setVisible(bEditMode);
 				name.setReadOnly(not bEditMode);
 				desc.setReadOnly(not bEditMode)
 			end
@@ -282,7 +281,7 @@
 				update(false);
 			end
 			function update(bEditMode)
-				idelete.setVisibility(bEditMode);
+				idelete.setVisible(bEditMode);
 				name.setReadOnly(not bEditMode);
 				desc.setReadOnly(not bEditMode)
 			end
@@ -382,7 +381,6 @@
 		<nodelete />
 		<playercontrol />
 		<minimize>minimized_char</minimize>
-		<tooltip control="name" />
 		<sheetdata>
 			<windowtitlebar_charsheethelper name="title">
 				<resource>power_title_cast</resource>
